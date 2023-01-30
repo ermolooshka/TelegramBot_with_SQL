@@ -8,7 +8,7 @@ bot = telebot.TeleBot(TOKEN)
 
 connection = sqlite3.connect("db/tgbot.db", check_same_thread=False)
 cursor = connection.cursor()
-cursor.execute('create table if not exists rate(course_value text, currency text, date datetime)')
+cursor.execute('create table if not exists rate(tgbot_id primary key, course_value text, currency text, date datetime)')
 
 
 def db_table_val(course_value: str, currency: str,  date: str):
